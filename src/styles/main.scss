@@ -7,3 +7,18 @@
 @import 'blocks/icon';
 @import 'blocks/menu';
 @import 'blocks/nav';
+//це я вообще не знаю шо тут забуло//
+
+//ето немношко сомнительно, потому что у меня то 96 то 104 на телефоне в общем//
+.main{
+  display: grid;
+  row-gap: 96px;
+  padding-block: 96px;
+
+  @include contentPaddingInline;
+
+  @include onTablet {
+    padding-block: 120px;
+    row-gap: 120px;
+  }
+}

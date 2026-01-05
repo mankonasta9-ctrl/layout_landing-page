@@ -1,5 +1,11 @@
 @mixin onTablet {
-  @media (min-width: 576px) {
+  @media (min-width: $tablet-min-width) {
+    @content;
+  }
+}
+
+@mixin onDesctop {
+  @media (min-width: $desctop-min-width) {
     @content;
   }
 }
@@ -7,7 +13,18 @@
 @mixin constentPaddingInline() {
   padding-inline: 20px;
 
-  @media (min-width: 576px) {
+  @include onTablet {
     padding-inline: 72px;
+  }
+
+  @include onDesctop() {
+    padding-inline: 120px;
+  }
+}
+
+@mixin hover($property, $toValue) {
+  transition: #{$property} 0.3s;
+  &:hover {
+    #{$property}: $toValue;
   }
 }
